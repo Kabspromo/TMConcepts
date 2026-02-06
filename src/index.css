@@ -1,10 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* TM CONCEPTS - Premium Event Production Design System */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
@@ -44,11 +44,15 @@
     --glass-border: 0 0% 100% / 0.1;
     --glass-hover: 0 0% 100% / 0.08;
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 6%) 0%, hsl(0 0% 4%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1) 0%, hsl(0 0% 100% / 0.02) 100%);
+    --gradient-glass: linear-gradient(
+      135deg,
+      hsl(0 0% 100% / 0.1) 0%,
+      hsl(0 0% 100% / 0.02) 100%
+    );
     --shadow-glow: 0 0 60px hsl(0 0% 100% / 0.05);
     --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
-    
-    /* Sidebar - keeping for shadcn compatibility */
+
+    /* Sidebar - shadcn compatibility */
     --sidebar-background: 0 0% 6%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 0 0% 100%;
@@ -60,13 +64,11 @@
   }
 
   .dark {
-    /* Dark mode is the default for this theme */
+    /* Dark mode is default */
     --background: 0 0% 4%;
     --foreground: 0 0% 100%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -80,7 +82,6 @@
     font-family: 'Inter', sans-serif;
   }
 
-  /* Custom selection color */
   ::selection {
     background: hsl(0 0% 100% / 0.2);
     color: hsl(0 0% 100%);
@@ -88,9 +89,13 @@
 }
 
 @layer components {
-  /* Glassmorphism card styles */
+  /* Glassmorphism cards */
   .glass-card {
-    background: linear-gradient(135deg, hsl(0 0% 100% / 0.08) 0%, hsl(0 0% 100% / 0.02) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(0 0% 100% / 0.08) 0%,
+      hsl(0 0% 100% / 0.02) 100%
+    );
     backdrop-filter: blur(20px);
     border: 1px solid hsl(0 0% 100% / 0.1);
     box-shadow: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
@@ -101,26 +106,36 @@
   }
 
   .glass-card-hover:hover {
-    background: linear-gradient(135deg, hsl(0 0% 100% / 0.12) 0%, hsl(0 0% 100% / 0.04) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(0 0% 100% / 0.12) 0%,
+      hsl(0 0% 100% / 0.04) 100%
+    );
     border-color: hsl(0 0% 100% / 0.2);
     transform: translateY(-4px);
     box-shadow: 0 35px 60px -15px hsl(0 0% 0% / 0.6);
   }
 
-  /* Text gradient effect */
   .text-gradient {
-    background: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 70%) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(0 0% 100%) 0%,
+      hsl(0 0% 70%) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Hero gradient overlay */
   .hero-overlay {
-    background: linear-gradient(180deg, hsl(0 0% 4% / 0.3) 0%, hsl(0 0% 4% / 0.8) 50%, hsl(0 0% 4%) 100%);
+    background: linear-gradient(
+      180deg,
+      hsl(0 0% 4% / 0.3) 0%,
+      hsl(0 0% 4% / 0.8) 50%,
+      hsl(0 0% 4%) 100%
+    );
   }
 
-  /* Smooth section transitions */
   .section-fade {
     @apply opacity-0 translate-y-8 transition-all duration-700;
   }
@@ -129,7 +144,6 @@
     @apply opacity-100 translate-y-0;
   }
 
-  /* Button glow effect */
   .btn-glow {
     box-shadow: 0 0 30px hsl(0 0% 100% / 0.1);
   }
@@ -138,7 +152,6 @@
     box-shadow: 0 0 40px hsl(0 0% 100% / 0.2);
   }
 
-  /* Line animation */
   .line-reveal {
     position: relative;
     overflow: hidden;
@@ -163,14 +176,12 @@
 }
 
 @layer utilities {
-  /* Animation delays */
   .animation-delay-100 { animation-delay: 100ms; }
   .animation-delay-200 { animation-delay: 200ms; }
   .animation-delay-300 { animation-delay: 300ms; }
   .animation-delay-400 { animation-delay: 400ms; }
   .animation-delay-500 { animation-delay: 500ms; }
 
-  /* Custom spacing */
   .section-padding {
     @apply py-20 md:py-32;
   }
