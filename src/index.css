@@ -89,7 +89,6 @@
 }
 
 @layer components {
-  /* Glassmorphism cards */
   .glass-card {
     background: linear-gradient(
       135deg,
